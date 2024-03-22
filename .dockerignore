@@ -1,0 +1,9 @@
+/target
+Dockerfile
+.gitignore
+tmp
+*.bak
+*.log
+*.jsonl
+init.sh
+makefile
