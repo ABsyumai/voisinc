@@ -1,4 +1,4 @@
-ARG CRATE_NAME=discordbot_template
+ARG CRATE_NAME=voisinc
 FROM rust:1 as build
 
 # setup environment
