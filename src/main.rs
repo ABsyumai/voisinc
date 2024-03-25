@@ -1,8 +1,10 @@
 use poise::serenity_prelude as serenity;
 pub mod types;
 pub mod commands;
+pub mod audio;
 /// Displays your or another user's account creation date
 use commands::*;
+use ::serenity::all::GatewayIntents;
 use types::Data;
 #[tokio::main]
 async fn main() {
@@ -10,7 +12,10 @@ async fn main() {
         .json()
         .init();
     let token = std::env::var("DISCORD_TOKEN").expect("missing DISCORD_TOKEN");
-    let intents = serenity::GatewayIntents::all();
+    let mut intents = serenity::GatewayIntents::all();
+    intents.remove(GatewayIntents::GUILD_PRESENCES);
+    intents.remove(GatewayIntents::GUILD_MEMBERS);
+    intents.remove(GatewayIntents::MESSAGE_CONTENT);
 
     let framework = poise::Framework::builder()
         .options(poise::FrameworkOptions {
