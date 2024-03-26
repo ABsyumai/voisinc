@@ -7,6 +7,8 @@ edition = "2021"
 
 [dependencies]
 anyhow = "1.0.81"
+futures = "0.3.30"
+serenity-voice-model = "*"
 thiserror = "1.0.58"
 tracing = "0.1.40"
 
@@ -19,6 +21,7 @@ version = "0.12.0"
 
 [dependencies.songbird]
 version = "0.4.1"
+features = ["receive"]
 
 [dependencies.tokio]
 version = "*"
@@ -27,3 +30,7 @@ features = ["full"]
 [dependencies.tracing-subscriber]
 version = "0.3.18"
 features = ["json", "serde"]
+
+[dependencies.dashmap]
+version = "*"
+features = ["inline"]
